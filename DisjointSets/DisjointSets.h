@@ -1,4 +1,5 @@
-#pragma once
+#ifndef DISJOINTSETS_H
+#define DISJOINTSETS_H
 
 #include <vector>
 
@@ -15,3 +16,5 @@ private:
 	std::vector<int> weights;
 	int find(int a);
 };
+
+#endif

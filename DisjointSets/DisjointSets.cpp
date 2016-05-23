@@ -60,7 +60,7 @@ int main() {
 
 	sets->connect(1, 2);                              // Connects Node 1 and 2
 
-    cout << sets->isConnected(1, 2) << "\n";          // Checks for connection between Node 1 and 2 - should return true
+	cout << sets->isConnected(1, 2) << "\n";          // Checks for connection between Node 1 and 2 - should return true
 	cout << sets->isConnected(2, 3) << "\n";          // Checks for connections between Node 2 and 3 - should return false
 
 	sets->connect(2, 3);
