@@ -25,5 +25,5 @@ Node A is connected to Node B, and Node B is connected to Node C, the Node A is 
 
 Note, however, that the data structure does not answer the question, "How are two nodes connected to each other?"
 It merely determines whether there *is* a connnection. As a result, there is no way to delete connections between
-nodes once they are made. Theses limitations result in various optimizations that all stem from treating 
+nodes once they are made. These limitations result in various optimizations that all stem from treating 
 the connections as forming several disjoint sets, the source of the data structure.
