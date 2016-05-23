@@ -10,7 +10,7 @@ I had learned in my CS class to learn the intricacies of the language.
 The disjoint sets abstract data type allows one to make nodes, establish connectivity between those nodes,
 and check interconnectivity of those nodes. *Connectivity* in this context is, formally, an equivalence
 relation. That is, beyond symmetric and reflexive properties, connectivity is a transitive relation; if
-Node A is connected to Node B, and Node B is connected to Node C, the Node A is connected to Node C.
+Node A is connected to Node B, and Node B is connected to Node C, then Node A is connected to Node C.
 
 Note, however, that the data structure does not answer the question, "How are two nodes connected to each 
 other?" It merely determines whether there *is* a connnection. As a result, there is no way to delete 
@@ -29,18 +29,18 @@ bool isConnected(int a, int b);
 1. Construction
     ```cpp
     // Creates a pointer to a new DisjointSets object with 10 nodes
-    DisjointSets *sets = new DisjointSets(10);                                            
+    DisjointSets* sets = new DisjointSets(10);                                            
     ```
 
 2. Making Connections
     ```cpp
-    DisjointSets *sets = new DisjointSets(10);
+    DisjointSets* sets = new DisjointSets(10);
     sets->connect(1, 2);     // connects Node 1 and Node 2 together                                         
     ```
 
 3. Checking for connections
     ```cpp
-    DisjointSets *sets = new DisjointSets(5);
+    DisjointSets* sets = new DisjointSets(5);
 
 	sets->connect(1, 2);
 
