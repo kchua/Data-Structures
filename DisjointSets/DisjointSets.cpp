@@ -3,9 +3,9 @@
 #include "DisjointSets.h"
 
 using namespace std;
-
 typedef DisjointSets DS;
 
+// Public member functions
 /* Constructs a Disjoint Sets object with N nodes.*/
 DS::DisjointSets(int N) {
 	parents = vector<int>(N);
@@ -33,6 +33,13 @@ int DS::find(int a) {
 	return root;
 }
 
+/* Checks if Node A and Node B are connected to each other.*/
+bool DS::isConnected(int a, int b) {
+	return find(a) == find(b);
+}
+
+
+// Private helper functions
 /* Connects Node A and Node B.*/
 void DS::connect(int a, int b) {
 	int aParent = find(a);
@@ -46,10 +53,6 @@ void DS::connect(int a, int b) {
 	}
 }
 
-/* Checks if Node A and Node B are connected to each other.*/
-bool DS::isConnected(int a, int b) {
-	return find(a) == find(b);
-}
 
 // example usage
 int main() {

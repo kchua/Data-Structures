@@ -5,17 +5,15 @@ I had learned in my CS class to learn the intricacies of the language.
 
 ## Disjoint Sets
 
-### The Disjoint Sets Abstract Data Type
-
 The disjoint sets abstract data type allows one to make nodes, establish connectivity between those nodes,
-and check interconnectivity of those nodes. *Connectivity* in this context is, formally, an equivalence
+and check connections between those nodes. *Connectivity* in this context is, formally, an equivalence
 relation. That is, beyond symmetric and reflexive properties, connectivity is a transitive relation; if
 Node A is connected to Node B, and Node B is connected to Node C, then Node A is connected to Node C.
 
 Note, however, that the data structure does not answer the question, "How are two nodes connected to each 
 other?" It merely determines whether there *is* a connnection. As a result, there is no way to delete 
 connections between nodes once they are made. These limitations result in various optimizations that all 
-stem from treating the connections as forming several disjoint sets, the source of the data structure.
+stem from treating the connections as forming several disjoint sets, the namesake of the data structure.
 
 ### Usage
 
@@ -54,3 +52,5 @@ bool isConnected(int a, int b);
 	sets->isConnected(1, 2);    // should still return true
     ```
 
+## Left-Leaning Red-Black Trees
+*Coming soon*
