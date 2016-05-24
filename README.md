@@ -53,4 +53,19 @@ bool isConnected(int a, int b);
     ```
 
 ## Left-Leaning Red-Black Trees
-*Coming soon*
+
+Binary search trees are decent data structures to represent sets of ordered items, since
+operations on the set can be usually done in logarithmic time. However, such behavior
+is dependent on the order in which items are inserted. Unfortunately, in the worst case,
+operations can run in quadratic time if items are inserted in order.
+
+Therefore, in an attempt to ensure logarithmic time performance, red-black tree data 
+structures were invented. This is done by making a variant of the binary search tree
+with colored links which, with the help of tree rotation operations used to restore
+invariants, is self-balancing.
+
+This specific variant is *left-leaning* since red links are always on the left, simplifying
+implementation.
+
+### Usage
+*This section will be filled in as more of the API is implemented and tested.*
