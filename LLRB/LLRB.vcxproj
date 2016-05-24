@@ -22,6 +22,7 @@
     <ProjectGuid>{105DACD6-88ED-4A59-BF8E-928A8DB398B2}</ProjectGuid>
     <RootNamespace>LLRB</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>LLRBT</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -110,10 +111,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="LLRB.h" />
+    <ClInclude Include="LLRBT.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LLRB.cpp" />
+    <ClCompile Include="LLRBT.cpp" />
+    <ClCompile Include="Tester.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
