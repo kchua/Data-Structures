@@ -5,20 +5,19 @@ template<typename Comparable>
 class LLRB {
 	friend class Node;
 public:
-	using valueType = Comparable;
 	LLRB();
 	~LLRB();
+	bool isEmpty();
 	int size();
-	boolean isEmpty();
-	void insert(valueType item);
-	bool contains(valueType item);
-	valueType remove(valueType item);
+	void insert(Comparable item);
+	bool contains(Comparable item);
+	Comparable remove(Comparable item);
 private:
 	int numItems;
 	Node* root;
-	friend LLRB struct Node;
-	Node insert(valueType item, Node node);
-	Node remove(valueType item, Node node);
+	struct Node;
+	Node insert(Comparable item, Node node);
+	Node remove(Comparable item, Node node);
 	Node leftRotation(Node node);
 	Node rightRotation(Node node);
 	Node flipColors(Node node);
