@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LLRBT.cpp" />
+    <ClCompile Include="LLRBTMap.cpp" />
     <ClCompile Include="Tester.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -20,6 +20,7 @@ LLRBT<Comparable>::Node::~Node() {
 	if (rChild != NULL) { delete rChild; }
 	lChild = nullptr;
 	rChild = nullptr;
+	delete item;
 }
 
 /* Recursive insertion method. */
@@ -32,6 +33,8 @@ typename LLRBT<Comparable>::Node* LLRBT<Comparable>::Node::insert(Comparable ite
 			nd->rChild = insert(item, nd->rChild);
 		} else if (item < nd->item) {
 			nd->lChild = insert(item, nd->lChild);
+		} else {
+			return nd;
 		}
 		// Balancing
 		if (nd->rChild != NULL && nd->rChild->isRed 
@@ -54,15 +57,12 @@ template<typename Comparable>
 bool LLRBT<Comparable>::Node::contains(Comparable item, Node* nd) {
 	if (nd == NULL) {
 		return false;
-	}
-	else if (nd->item == item) {
+	} else if (nd->item == item) {
 		return true;
-	}
-	else {
+	} else {
 		if (item > nd->item) {
 			return contains(item, nd->rChild);
-		}
-		else {
+		} else {
 			return contains(item, nd->lChild);
 		}
 	}

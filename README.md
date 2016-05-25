@@ -52,7 +52,7 @@ bool isConnected(int a, int b);
 	sets->isConnected(1, 2);    // should still return true
     ```
 
-## Left-Leaning Red-Black Trees
+## Left-Leaning Red-Black Trees (Set/Map)
 
 Binary search trees are decent data structures to represent sets of ordered items, since
 operations on the set can be usually done in logarithmic time. However, such behavior
@@ -68,4 +68,28 @@ This specific variant is *left-leaning* since red links are always on the left, 
 implementation.
 
 ### Usage
-*This section will be filled in as more of the API is implemented and tested.*
+
+The set version of the LLRB tree, `LLRBT<Comparable>`, has the following API:
+```cpp
+LLRBT();
+~LLRBT();
+bool isEmpty();
+int size();
+void insert(Comparable item);
+bool contains(Comparable item);
+void clear();
+```
+
+The map version of the tree, `LLRBTMap<Key, Value>`, has the following API:
+```cpp
+LLRBTMap();
+~LLRBTMap();
+bool isEmpty();
+int size();
+void put(Key k, Value v);
+Value get(Key k);
+bool contains(Key k);
+void clear();
+```
+
+*NOTE: The LLRBTMap class is dependent on the LLRBT class.*
