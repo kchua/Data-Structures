@@ -3,6 +3,16 @@
 As part of my introduction to the C++ language, I decided to implement some of the data structures that
 I had learned in my CS class to learn the intricacies of the language.
 
+###Progress (Known Issues/Completion)
+1. Disjoint Sets
+    * No exceptions are raised if invalid nodes numbers are passed in.
+2. Left-leaning Red-Black Trees
+    * May implement a delete operation
+    * Clear operation still to be implemented
+    * None of the map API is functional as of now.
+3. Hashmap
+    * Only an idea for now
+
 ## Disjoint Sets
 
 The disjoint sets abstract data type allows one to make nodes, establish connectivity between those nodes,
@@ -93,3 +103,6 @@ void clear();
 ```
 
 *NOTE: The LLRBTMap class is dependent on the LLRBT class.*
+
+## Hashmaps (Implemented with Linear Probing)
+*Coming soon*
