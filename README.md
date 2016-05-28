@@ -4,11 +4,10 @@ As part of my introduction to the C++ language, I decided to implement some of t
 I had learned in my CS class to learn the intricacies of the language.
 
 ###Progress (Known Issues/Completion)
-1. Disjoint Sets
-    * No exceptions are raised if invalid nodes numbers are passed in.
+1. Disjoint Sets (Complete!)
 2. Left-leaning Red-Black Trees
     * May implement a delete operation
-3. Hashmap
+3. Hashmap (In Progress)
     * Only an idea for now
 
 ## Disjoint Sets
