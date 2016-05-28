@@ -9,8 +9,8 @@ public:
 	~LLRBT();
 	bool isEmpty();
 	int size();
-	void insert(Comparable item);
-	bool contains(Comparable item);
+	void insert(const Comparable& item);
+	bool contains(const Comparable& item);
 	void clear();
 private:
 	int numItems;
@@ -19,10 +19,10 @@ private:
 		Node* lChild;
 		Node* rChild;
 		bool isRed = true;
-		Node(Comparable item, Node* lChild, Node* rChild);
+		Node(const Comparable& item);
 		~Node();
-		static Node* insert(Comparable item, Node* nd);
-		static bool contains(Comparable item, Node* nd);
+		static Node* insert(const Comparable& item, Node* nd);
+		static bool contains(const Comparable& item, Node* nd);
 		static Node* leftRotation(Node* nd);
 		static Node* rightRotation(Node* nd);
 		static Node* flipColors(Node* nd);

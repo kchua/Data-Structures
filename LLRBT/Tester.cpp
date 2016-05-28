@@ -16,7 +16,13 @@ int main() {
 	cout << test->contains(4) << "\n";
 	cout << test->contains(3) << "\n";
 	cout << test->contains(2) << "\n";
-	cout << test->contains(-1) << "\n";
+	cout << test->contains(-1) << "\n\n";
+	test->clear();
+	cout << test->contains(1) << "\n";
+	cout << test->contains(0) << "\n";
+	cout << test->contains(4) << "\n";
+	cout << test->contains(3) << "\n";
+	cout << test->contains(2) << "\n";
+	cout << test->contains(-1) << "\n\n";
 	delete test;
-	return 0;
 }

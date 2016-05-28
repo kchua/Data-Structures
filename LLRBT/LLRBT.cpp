@@ -7,10 +7,10 @@ using namespace std;
 
 /* Constructor for the Node class. */
 template<typename Comparable>
-LLRBT<Comparable>::Node::Node(Comparable item, Node* lChild, Node* rChild) {
+LLRBT<Comparable>::Node::Node(const Comparable& item) {
 	this->item = item;
-	this->lChild = lChild;
-	this->rChild = rChild;
+	this->lChild = nullptr;
+	this->rChild = nullptr;
 }
 
 /* Destructor for the Node class. */
@@ -20,14 +20,13 @@ LLRBT<Comparable>::Node::~Node() {
 	if (rChild != NULL) { delete rChild; }
 	lChild = nullptr;
 	rChild = nullptr;
-	delete item;
 }
 
 /* Recursive insertion method. */
 template<typename Comparable>
-typename LLRBT<Comparable>::Node* LLRBT<Comparable>::Node::insert(Comparable item, Node* nd) {
+typename LLRBT<Comparable>::Node* LLRBT<Comparable>::Node::insert(const Comparable& item, Node* nd) {
 	if (nd == NULL) {
-		return new Node(item, nullptr, nullptr);
+		return new Node(item);
 	} else {
 		if (item > nd->item) {
 			nd->rChild = insert(item, nd->rChild);
@@ -54,7 +53,7 @@ typename LLRBT<Comparable>::Node* LLRBT<Comparable>::Node::insert(Comparable ite
 
 /* Recursive method for checking whether something is contained within the tree. */
 template<typename Comparable>
-bool LLRBT<Comparable>::Node::contains(Comparable item, Node* nd) {
+bool LLRBT<Comparable>::Node::contains(const Comparable& item, Node* nd) {
 	if (nd == NULL) {
 		return false;
 	} else if (nd->item == item) {
@@ -126,13 +125,20 @@ int LLRBT<Comparable>::size() {
 }
 
 template<typename Comparable>
-void LLRBT<Comparable>::insert(Comparable item) {
+void LLRBT<Comparable>::insert(const Comparable& item) {
 	root = Node::insert(item, root);
 	root->isRed = false;
 	numItems++;
 }
 
 template<typename Comparable>
-bool LLRBT<Comparable>::contains(Comparable item) {
+bool LLRBT<Comparable>::contains(const Comparable& item) {
 	return Node::contains(item, root);
+}
+
+template<typename Comparable>
+void LLRBT<Comparable>::clear() {
+	delete root;
+	root = nullptr;
+	numItems = 0;
 }

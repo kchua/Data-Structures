@@ -8,8 +8,6 @@ I had learned in my CS class to learn the intricacies of the language.
     * No exceptions are raised if invalid nodes numbers are passed in.
 2. Left-leaning Red-Black Trees
     * May implement a delete operation
-    * Clear operation still to be implemented
-    * None of the map API is functional as of now.
 3. Hashmap
     * Only an idea for now
 
@@ -85,24 +83,10 @@ LLRBT();
 ~LLRBT();
 bool isEmpty();
 int size();
-void insert(Comparable item);
-bool contains(Comparable item);
+void insert(const Comparable& item);
+bool contains(const Comparable& item);
 void clear();
 ```
-
-The map version of the tree, `LLRBTMap<Key, Value>`, has the following API:
-```cpp
-LLRBTMap();
-~LLRBTMap();
-bool isEmpty();
-int size();
-void put(Key k, Value v);
-Value get(Key k);
-bool contains(Key k);
-void clear();
-```
-
-*NOTE: The LLRBTMap class is dependent on the LLRBT class.*
 
 ## Hashmaps (Implemented with Linear Probing)
 *Coming soon*
