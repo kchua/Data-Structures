@@ -3,7 +3,14 @@
 As part of my introduction to the C++ language, I decided to implement some of the data structures that
 I had learned in my CS class to learn the intricacies of the language.
 
-###Progress (Known Issues/Completion)
+## Table of Contents
+* <a name="https://github.com/kchua/Data-Structures#progress-known-issuescompletion">Progress (Known Issues/Completion)</a>
+* <a name="https://github.com/kchua/Data-Structures#disjoint-sets">Disjoint Sets</a>
+* <a name="https://github.com/kchua/Data-Structures#left-leaning-red-black-trees">Left-Leaning Red-Black Trees</a>
+* <a name="https://github.com/kchua/Data-Structures#hashmaps-implemented-with-linear-probing">Hashmaps</a>
+
+
+## Progress (Known Issues/Completion)
 1. Disjoint Sets (Complete!)
 2. Left-leaning Red-Black Trees
     * May implement a delete operation
@@ -88,19 +95,33 @@ void clear();
 ```
 
 ## Hashmaps (Implemented with Linear Probing)
-*Description coming soon*
 
-###Usage
+Hashmaps are powerful data structures that allow one to map objects of one type to objects of
+another type. They can be more powerful than tree-based maps, which rely keys that have implemented
+comparison and equality operators (or in other words, comparable). In addition, if the hash function
+associated with the keys distributes them evenly every time, then we have amortized constant time
+for all oeprations.
 
-The `HashMap` class has the following API:
+However, because the data structure does not rely on ordering for its operations, it is impossible
+to carry out a search for the minimum, maximum, etc. without having to search through all the keys.
+
+### Usage
+
+The `HashMap<Key, Value, HashFunction>` class has the following API:
 ```cpp
 HashMap();
+HashMap(const HashMap& other);
 ~HashMap();
+HashMap& operator=(HashMap other);
 bool isEmpty();
 int size();
 Value& operator[] (Hashable key);
-void put(Hashable key, Hashable value);
+void put(Hashable key, Value val);
 Value& get(const Hashable& key);
 bool contains(const Hashable& key);
 ```
+
+*Warning: Due to the nature of references in C++, if one attempts to use the subscript operator or `get`
+with a key that is not in the set, the data structure inserts an object of type `Value`. Before
+using the subscript operator or calling `get`, please ensure to call `contains` to avoid undefined behavior.*
 
