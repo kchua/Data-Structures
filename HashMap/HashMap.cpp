@@ -6,14 +6,8 @@ using namespace std;
 template<class Hashable, class Value, class HashFunction>
 HashMap<Hashable, Value, HashFunction>::HashMap() {
 	numItems = 0;
-	keys = new Hashable*[8];
-	vals = new Value*[8];
-	for (int i = 0; i < 8; i++) {
-		*(keys + i) = nullptr;
-		*(vals + i) = nullptr;
-		numItems++;
-	}
 	numBuckets = 8;
+	resetBuckets(numBuckets);
 }
 
 template<class Hashable, class Value, class HashFunction>
@@ -42,15 +36,54 @@ Value& HashMap<Hashable, Value, HashFunction>::operator[](Hashable key) {
 	int probeStart = HashFunction()(key) % numBuckets;
 	int curr = 0;
 	while (*(keys + probeStart + curr) != nullptr && **(keys + probeStart + curr) != key) {
-		curr++;								// TODO: replace with an increment function that loops around.
+		increment(curr);
 	}
 	if (*(keys + probeStart + curr) == nullptr) {
 		*(vals + probeStart + curr) = new Value[1];
 		*(keys + probeStart + curr) = &key;
+		expand();
 	}
 	return **(vals + probeStart + curr);
 }
 
+// Private Helper Methods
+
+/* Increments the index in such a way that it loops back to zero once it equals
+   the number of buckets */
+template<class Hashable, class Value, class HashFunction>
+void HashMap<Hashable, Value, HashFunction>::increment(int& index) {
+	index = 2(index + 1) % numBuckets;
+}
+
+/* Resets all arrays so that there are newNumBuckets buckets. */
+template<class Hashable, class Value, class HashFunction>
+void HashMap<Hashable, Value, HashFunction>::resetBuckets(int newNumBuckets) {
+	keys = new Hashable*[newNumBuckets];
+	vals = new Value*[newNumBuckets];
+	for (int i = 0; i < newNumBuckets; i++) {
+		*(keys + i) = nullptr;
+		*(vals + i) = nullptr;
+	}
+
+}
+
+/* Expands the number of buckets to twice the current size if the load factor is
+   greater than 1/2. */
+template<class Hashable, class Value, class HashFunction>
+void HashMap<Hashable, Value, HashFunction>::expand() {
+	if (numItems >= numBuckets / 2) {
+		numBuckets *= 2;
+		Hashable** oldKeys = keys;
+		Value** oldVals = vals;
+		numItems = 0;
+		resetBuckets(newNumBuckets);
+		for (int i = 0; i < numBuckets / 2; i++) {
+			if (*(oldKeys + i) != nullptr) {
+				put(**(oldKeys + i), **(oldVals + i));
+			}
+		}
+	}
+}
 
 int main() {
 	HashMap<int, int> a = HashMap<int, int>();

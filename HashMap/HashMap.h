@@ -19,6 +19,10 @@ private:
 	unsigned int numBuckets;
 	Hashable** keys;
 	Value** vals;
+	void increment(int& index);
+	void resetBuckets(int newNumBuckets);
+	void expand();
+	void shrink();
 };
 
 #endif
