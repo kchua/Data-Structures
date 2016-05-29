@@ -4,10 +4,10 @@ As part of my introduction to the C++ language, I decided to implement some of t
 I had learned in my CS class to learn the intricacies of the language.
 
 ## Table of Contents
-* <a name="https://github.com/kchua/Data-Structures#progress-known-issuescompletion">Progress (Known Issues/Completion)</a>
-* <a name="https://github.com/kchua/Data-Structures#disjoint-sets">Disjoint Sets</a>
-* <a name="https://github.com/kchua/Data-Structures#left-leaning-red-black-trees">Left-Leaning Red-Black Trees</a>
-* <a name="https://github.com/kchua/Data-Structures#hashmaps-implemented-with-linear-probing">Hashmaps</a>
+* [Progress (Known Issues/Completion)](#progress-known-issuescompletion)
+* [Disjoint Sets](#disjoint-sets)
+* [Left-Leaning Red-Black Trees](#left-leaning-red-black-trees)
+* [Hashmaps](#hashmaps-implemented-with-linear-probing)
 
 
 ## Progress (Known Issues/Completion)
