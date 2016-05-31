@@ -16,6 +16,7 @@ public:
 	void put(Hashable key, Value val);
 	Value& get(const Hashable& key);
 	bool contains(const Hashable& key);
+	Value remove(Hashable key);
 private:
 	unsigned int numItems;
 	unsigned int numBuckets;

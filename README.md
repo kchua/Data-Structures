@@ -97,8 +97,8 @@ void clear();
 ## Hashmaps (Implemented with Linear Probing)
 
 Hashmaps are powerful data structures that allow one to map objects of one type to objects of
-another type. They can be more powerful than tree-based maps, which rely keys that have implemented
-comparison and equality operators (or in other words, comparable). In addition, if the hash function
+another type. They can apply to more general cases than tree-based maps, which rely on keys that have 
+implemented comparison and equality operators (or in other words, comparable). In addition, if the hash function
 associated with the keys distributes them evenly every time, then we have amortized constant time
 for all oeprations.
 
@@ -119,6 +119,7 @@ Value& operator[] (Hashable key);
 void put(Hashable key, Value val);
 Value& get(const Hashable& key);
 bool contains(const Hashable& key);
+Value remove(Hashable key);
 ```
 
 *Warning: Due to the nature of references in C++, if one attempts to use the subscript operator or `get`
